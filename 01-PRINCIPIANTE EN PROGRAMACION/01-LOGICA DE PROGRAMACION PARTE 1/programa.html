@@ -1,0 +1,302 @@
+<meta charset="UTF-8">
+
+<!-- Vercion 1.0
+<script>
+
+    document.write("La edad de Lucas es...");
+    document.write("<br>");
+    document.write(17+8);
+
+</script>
+-->
+
+<!-- Vercion 1.1
+<script>
+
+    document.write("El año de nacimiento de Lucas es");
+    document.write("<br>");
+    document.write(2022-25);
+
+</script>
+-->
+
+<!-- Vercion 1.2
+<script>
+
+    document.write("El promedio de edad de Fcundo, Tamara y Frans es...");
+    document.write("<br>");
+    document.write((26+25+31)/3);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Fcundo nacio en el año..");
+    document.write("<br>");
+    document.write(2022-26);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Tamara nacio en el año..");
+    document.write("<br>");
+    document.write(2022-25);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Frans nacio en el año..");
+    document.write("<br>");
+    document.write(2022-31);
+
+</script>
+-->
+
+<!-- Vercion 1.3
+<script>
+
+    document.write("Fcundo tiene: "+(2022-1996)+" años");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Tamara tiene: "+(2022-1995)+" años");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Frans tiene: "+(2022-1991)+" años");
+    document.write("<br>");
+
+</script>
+-->
+
+<!-- Vercion 1.4
+<h1>PROGRAMA</h1>
+
+<script>
+
+    var anio = 2022
+
+    document.write("Fcundo tiene: "+(anio-1996)+" años");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Tamara tiene: "+(anio-1995)+" años");
+
+    anio = 2023
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Frans tiene: "+(anio-1991)+" años");
+    document.write("<br>");
+
+</script>
+-->
+
+<!-- Vercion 1.5
+<h1>PROGRAMA</h1>
+
+<script>
+
+    var anio = 2022;
+
+    var anioNacimientoFacundo = 1996;
+    var anioNacimientoTamara = 1997;
+    var anioNacimientoFrans = 1991;
+    var anioNacimientoAnahi = 1990;
+    var anioNacimientoValeria = 1985;
+    var anioNacimientoLucia = 1996;
+
+    var edadFacundo = anio - anioNacimientoFacundo;
+    var edadTamara = anio - anioNacimientoTamara;
+    var edadFrans = 0;
+    var edadAnahi = 0;
+    var edadValeria = 0;
+    var edadLucia = 0;
+
+    var promedio = 0;
+
+    var nombre1 = "Anahi";
+    var nombre2 = "Valeria";
+    var nombre3 = "Lucia"
+
+    document.write("Fcundo tiene: "+(edadFacundo)+" años");
+    
+    document.write("<br>");
+    document.write("<br>");
+    
+    document.write("Tamara tiene: "+(edadTamara)+" años");
+
+    anio = 2023
+    edadFrans = anio - anioNacimientoFrans;
+
+    document.write("<br>");
+    document.write("<br>");
+    
+    document.write("Frans tiene: "+(edadFrans)+" años");
+    
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+    anio = 2025
+    edadAnahi = anio - anioNacimientoAnahi;
+    edadValeria = anio - anioNacimientoValeria;
+    edadLucia = anio - anioNacimientoLucia;
+
+    document.write("Anahi tiene: "+(edadAnahi)+ " años");
+    
+    document.write("<br>");
+    document.write("<br>");
+    
+    document.write("Valeria tiene: "+(edadValeria)+ " años");
+    
+    document.write("<br>");
+    document.write("<br>");
+    
+    document.write("Lucia tiene: "+(edadLucia)+ " años");
+    
+    document.write("<br>");
+    document.write("<br>");
+    
+    promedio = (edadAnahi+edadValeria+edadLucia)/3;
+
+    document.write("El promedio de las edades de "+nombre1+", "+nombre2+" y "+nombre3+" es: "+Math.round(promedio));
+
+</script>
+-->
+
+<!-- Vercion 1.6 
+<h1>PROGRAMA</h1>
+
+<script>
+
+    var anio = 2022;
+
+    var anioNacimientoFacundo = 1996;
+    var anioNacimientoTamara = 1997;
+    var anioNacimientoFrans = 1991;
+    var anioNacimientoAnahi = 1990;
+    var anioNacimientoValeria = 1985;
+    var anioNacimientoLucia = 1996;
+
+    var edadFacundo = anio - anioNacimientoFacundo;
+    var edadTamara = anio - anioNacimientoTamara;
+    var edadFrans = 0;
+    var edadAnahi = 0;
+    var edadValeria = 0;
+    var edadLucia = 0;
+
+    var nombre1 = "Anahi";
+    var nombre2 = "Valeria";
+    var nombre3 = "Lucia"
+    
+    var promedio = 0;
+
+    var saltoLinea = "<br><br>"
+
+    document.write("Fcundo tiene: "+(edadFacundo)+" años");
+    
+    document.write(saltoLinea);
+    
+    document.write("Tamara tiene: "+(edadTamara)+" años");
+
+    anio = 2023
+    edadFrans = anio - anioNacimientoFrans;
+
+    document.write(saltoLinea);
+    
+    document.write("Frans tiene: "+(edadFrans)+" años");
+    
+    document.write(saltoLinea);
+    document.write(saltoLinea);
+
+    anio = 2025
+    edadAnahi = anio - anioNacimientoAnahi;
+    edadValeria = anio - anioNacimientoValeria;
+    edadLucia = anio - anioNacimientoLucia;
+
+    document.write("Anahi tiene: "+(edadAnahi)+ " años");
+    
+    document.write(saltoLinea);
+    
+    document.write("Valeria tiene: "+(edadValeria)+ " años");
+    
+    document.write(saltoLinea);
+    
+    document.write("Lucia tiene: "+(edadLucia)+ " años");
+    
+    document.write(saltoLinea);
+    
+    promedio = (edadAnahi+edadValeria+edadLucia)/3;
+
+    document.write("El promedio de las edades de "+nombre1+", "+nombre2+" y "+nombre3+" es: "+Math.round(promedio));
+
+</script>
+-->
+
+<!-- Vercion 1.7 (function)
+<h1>PROGRAMA</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br><br>");
+
+    }
+
+    var anio = 2022;
+
+    var anioNacimientoFacundo = 1996;
+    var anioNacimientoTamara = 1997;
+    var anioNacimientoFrans = 1991;
+
+    var edadFacundo = anio - anioNacimientoFacundo;
+    var edadTamara = anio - anioNacimientoTamara;
+    var edadFrans = 0;
+
+    document.write("Fcundo tiene: "+(edadFacundo)+" años");
+    
+    saltarLinea();
+    
+    document.write("Tamara tiene: "+(edadTamara)+" años");
+
+    anio = 2023
+    edadFrans = anio - anioNacimientoFrans;
+
+    saltarLinea();
+    
+    document.write("Frans tiene: "+(edadFrans)+" años");
+    
+</script>
+-->
+
+<!-- Vercion 1.8 (function) -->
+<h1>PROGRAMA</h1>
+
+<script>
+
+    function saltarLinea() {
+
+        document.write("<br><br>");
+
+    }
+
+    function imprimir(mensaje) {
+
+        document.write(mensaje);
+        saltarLinea();
+
+    }
+
+    var anio = 2022;
+
+    var anioNacimientoFacundo = 1996;
+    var anioNacimientoTamara = 1997;
+    var anioNacimientoFrans = 1991;
+
+    var edadFacundo = anio - anioNacimientoFacundo;
+    var edadTamara = anio - anioNacimientoTamara;
+    var edadFrans = 0;
+
+    imprimir("Fcundo tiene: "+(edadFacundo)+" años");
+    
+    imprimir("Tamara tiene: "+(edadTamara)+" años");
+
+    anio = 2023
+    edadFrans = anio - anioNacimientoFrans;
+
+    imprimir("Frans tiene: "+(edadFrans)+" años");
+    
+</script>

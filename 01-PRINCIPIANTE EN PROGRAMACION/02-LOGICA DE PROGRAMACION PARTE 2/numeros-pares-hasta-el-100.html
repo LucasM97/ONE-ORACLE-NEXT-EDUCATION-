@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<h1>NÚMEROS PARES GHASTA EL 100</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function parHataCien() {
+        let numero = 2;
+        while(numero <= 100) {
+            imprimir(numero);
+            numero += 2;
+        }
+    }    
+    
+    parHataCien();
+    imprimir("FIN");
+    
+</script>

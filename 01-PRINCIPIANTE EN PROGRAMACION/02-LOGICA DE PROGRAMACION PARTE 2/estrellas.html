@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<h1>TABLA DE ESTRELLAS</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function obtenerEntero(mensaje) {
+        return(parseInt(prompt(mensaje)));
+    }
+
+    function crearLinea(columnas) {
+        let linea = "";
+        for(let i = 1;i <= columnas;i++) {
+            linea += "*";
+        }
+        return(linea);
+    }
+
+    function crearTabla(filas, columnas) {
+        for(let i = 1;i <= filas;i++) {
+            imprimir(crearLinea(columnas));
+        }
+    }
+
+    let filas = obtenerEntero("Ingrese la cantidad de filas de estrellas");
+    let columnas = obtenerEntero("Ingrese la cantidad de columnas de estrellas");
+    
+    crearTabla(filas,columnas);
+
+</script>

@@ -1,0 +1,94 @@
+<meta charset="UTF-8">
+
+<!-- Version 1.0 
+<h1>PROGRAMA CALCULAR IMC</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function calcularImc(peso, altura, nombre) {
+        var imc = 0;
+        imc = peso / (altura * altura);
+        imprimir("El IMC de " + nombre + " es: " + imc);
+    }
+
+    var nombre = "Lucas";
+    var pesoLucas =calcularImc(pesoLucas,alturaLucas,nombre); 65.5;
+    var alturaLucas = 1.62;
+
+    calcularImc(pesoLucas,alturaLucas,nombre);
+
+</script>
+-->
+
+<!-- Version 1.1 (Promedio IMC) 
+<h1>PROGRAMA CALCULAR IMC</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function calcularImc(peso, altura, nombre) {
+        return(peso / (altura * altura));
+    }
+
+    var nombre1 = "Lucas";
+    var pesoLucas = 65.5;
+    var alturaLucas = 1.62;
+
+    var nombre2 = "Frans";
+    var pesoFrans = 76;
+    var alturaFrans = 1.68;
+
+    var imcLucas = calcularImc(pesoLucas, alturaLucas, nombre1);
+    var imcFrans = calcularImc(pesoFrans, alturaFrans, nombre2);
+
+    var promedioImc = (imcLucas + imcFrans) / 2;
+
+    imprimir("El promedio del imc calculado entre " + nombre1 + " y " + nombre2 + " es: " + promedioImc);
+
+</script>
+-->
+
+<!-- Version 1.2 Entrada de datos -->
+<h1>CALCULO DE IMC</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function calcularImc(peso, altura, nombre) {
+        return(peso / (altura * altura));
+    }
+    
+    var nombre1 = prompt("Introdusca su nombre");
+    var peso1 = parseInt(prompt(nombre1 + " introdusca su peso"));
+    var altura1 = parseFloat(prompt(nombre1 + " introdusca su altura"));
+
+    var imc1 = calcularImc(peso1, altura1, nombre1);
+
+    imprimir("Hola " + nombre1 + ", su IMC es de: " + imc1);
+
+</script>

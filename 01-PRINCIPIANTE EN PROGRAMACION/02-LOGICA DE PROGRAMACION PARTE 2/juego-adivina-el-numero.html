@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+
+<h1>ADIVINA EL NUMERO</h1>
+
+<!-- Version 1.0
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function sortea(numero) {
+        return(Math.round(Math.random()*numero));
+    }
+
+    let numeroPensado = sortea(10);
+    let numeroLanzado = parseInt(prompt("Ingrese un numero entre 0-10"));
+
+    if(numeroPensado == numeroLanzado) {
+        imprimir("Usted acertó");
+    } else {
+        imprimir("Usted erró, el número pensado era " + numeroPensado);
+        if(numeroPensado < numeroLanzado) {
+            imprimir("El número pensado era menor que " + numeroLanzado);
+        } else {
+            imprimir("El número pensado era mayor que " + numeroLanzado);
+        }
+    }
+    
+</script>
+-->
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function sortea(numero) {
+        return(Math.round(Math.random()*numero));
+    }
+
+    let numeroPensado = sortea(10);
+    let numeroLanzado = 0;
+    let intentosPosibles = 3;
+    let intentos = 1;
+
+    while(intentos <= intentosPosibles) {
+        numeroLanzado = parseInt(prompt("Ingrese un numero entre 0-10"));
+        if(numeroPensado == numeroLanzado) {
+            alert("Usted acertó en el intento " + intentos + " el número pensado era " + numeroPensado);
+            break;
+        } else {
+            if(numeroPensado < numeroLanzado) {
+                alert("Usted erró el número pensado es menor que " + numeroLanzado);
+            } else {
+                alert("Usted erró el número pensado es mayor que " + numeroLanzado);
+            }
+            intentos++;
+        }
+    }
+    
+    if(numeroPensado != numeroLanzado) {
+        imprimir("El número pensado era " + numeroPensado);
+    }
+    
+</script>

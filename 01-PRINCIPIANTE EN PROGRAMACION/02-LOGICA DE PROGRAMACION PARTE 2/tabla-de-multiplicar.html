@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h1>TABLAS DE MULTIPLICAR</h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");
+    }
+
+    function imprimir(mensaje) {
+        document.write(mensaje);
+        saltarLinea();
+    }
+
+    function generarTabla(numero) {
+        imprimir("<big>Tabla del " + numero + "</big>");
+        for(let i = 1;i <= 10;i++) {
+            imprimir(numero + " x " + i + " = " + numero*i);
+        }
+    }
+
+    function generarTablaUnoAX(x) {
+        for(let i = 1;i <= x;i++) {
+            generarTabla(i);
+        }
+    }
+
+    generarTablaUnoAX(parseInt(prompt("Hasta que tabla desea ver")));
+    
+</script>

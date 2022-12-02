@@ -1,0 +1,74 @@
+<canvas width="600" height="400">
+    
+</canvas>
+
+<script>
+    //#region variables
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    var radio = 10;
+    var randomX = randomPosition(600);
+    var randomY = randomPosition(400);
+    var x = 0;
+    var y = 0;
+    //#endregion
+     
+    //#region diseño
+    function createScreen() {
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400);
+    }
+    
+    function desingCircle(x,y,radio,color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,Math.PI*2);
+        pincel.fill();
+    }
+    
+    function desingTarget(x,y) {
+        desingCircle(x,y,radio+20,"red");
+        desingCircle(x,y,radio+10,"white");
+        desingCircle(x,y,radio,"red");
+    } 
+    //#endregion
+    
+    //#region acciones
+    function randomPosition(max) {
+        return(Math.round(Math.random()*max));
+    }
+
+    function clearScreen() {
+        pincel.clearRect(0,0,600,400);
+    }
+    
+    function moveTarget() {
+        randomX = randomPosition(600);
+        randomY = randomPosition(400);
+        clearScreen();
+        createScreen();
+        desingTarget(randomX,randomY);
+    }
+
+    function isTarget() {
+        return(x<randomX+radio && x>randomX-radio && y<randomY+radio && y>randomY-radio);
+    }
+
+    function shoot(evento) {
+        x = evento.pageX-pantalla.offsetLeft;
+        y = evento.pageY-pantalla.offsetTop;
+
+        if(isTarget()) {
+            alert("Diste en el blanco");
+        }
+    }   
+    //#endregion
+    
+    //#region principal
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    setInterval(moveTarget,1000);
+    pantalla.onclick = shoot;
+    //#endregion
+</script>

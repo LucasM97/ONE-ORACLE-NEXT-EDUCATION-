@@ -1,0 +1,111 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+    //#region variables
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    var x = 0;
+    var y = 0;
+    var puedoDibujar = false;
+    var colores = ["lightpink","lightgreen","lightblue"];
+    var colorActual = colores[0];
+    //#endregion
+
+    //#region diseño
+    function crearCirculo(x,y,color) {
+        pincel.fillStyle=color;
+        pincel.beginPath();
+        pincel.arc(x,y,5,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function crearCuadrado(posX,posY,color) {
+        pincel.fillStyle=color;
+        pincel.fillRect(posX,posY,50,50);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(posX,posY,50,50);
+    }
+
+    function crearPaletaDeColores() {
+        for(let i=0;i<colores.length;i++) {
+            crearCuadrado(x,y,colores[i]);
+            x+=50;
+        }
+    }
+
+    function crearPantalla() {
+        pincel.fillStyle='grey';
+        pincel.fillRect(0, 0, 600, 400);
+        crearPaletaDeColores();
+    }
+    //#endregion
+
+    //#region acciones
+    
+    function habilitarDibujar() {
+        puedoDibujar = true;
+    }
+    
+    function deshabilitarDibujar() {
+        puedoDibujar = false;
+    }
+
+    function dibujarCirculo(evento) {
+        if(puedoDibujar) {
+            x = evento.pageX - pantalla.offsetLeft;
+            y = evento.pageY - pantalla.offsetTop;
+            if (x < 160 && y < 60) {
+                deshabilitarDibujar();
+            } else {
+                crearCirculo(x,y,colorActual);
+            }
+        }
+    }
+
+    function esRojo(x,y) {
+        return(x<50 && x>0 && y<50 && y>0);
+    }
+
+    function esVerde(x,y) {
+        return(x<100 && x>50 && y<50 && y>0);
+    }
+
+    function esAzul(x,y) {
+        return(x<150 && x>100 && y<50 && y>0);
+    }
+
+    function obtenerColor(x,y) {
+        if(esRojo(x,y)) {
+            return colores[0];
+        }
+        if(esVerde(x,y)) {
+            return colores[1];
+        } 
+        if(esAzul(x,y)) {
+            return colores[2];
+        }
+        return ""
+    }
+
+    function cambiarColor(evento) {
+        x = evento.pageX - pantalla.offsetLeft;
+        y = evento.pageY - pantalla.offsetTop;
+        let color = obtenerColor(x,y);
+        if(color != "") {
+            colorActual = color;
+        }
+    }
+    //#endregion
+
+    //#region Main
+    crearPantalla();
+
+    pantalla.onmousemove = dibujarCirculo;
+
+    pantalla.onmousedown = habilitarDibujar;
+
+    pantalla.onmouseup = deshabilitarDibujar;
+
+    pantalla.onclick = cambiarColor;
+    //#endregion
+</script>
